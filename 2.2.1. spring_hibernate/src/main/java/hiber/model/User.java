@@ -1,11 +1,25 @@
 package hiber.model;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "users")
 public class User {
+
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
+        public User getUser() {
+        return user;
+    }
+
+    public User setUser(User user) {
+        this.user = user;
+        return user;
+    }
+
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +34,7 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToOne(cascade = CascadeType.ALL)
     private Car car;
 
     public User() {
@@ -68,10 +82,11 @@ public class User {
         return car;
     }
 
-    public Car setCar(Car car) {
+    public User setCar(Car car) {
         this.car = car;
-        return car;
+        return null;
     }
+
 //
 //    @Override
 //    public String toString() {

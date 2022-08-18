@@ -20,10 +20,10 @@ public class UserDaoImp implements UserDao {
         sessionFactory.getCurrentSession().save(user);
     }
 
-    @Override
-    public void add(Car car) {
-        sessionFactory.getCurrentSession().save(car);
-    }
+//    @Override
+//    public void add(Car car) {
+//        sessionFactory.getCurrentSession().save(car);
+//    }
 
     @Override
     @SuppressWarnings("unchecked")
@@ -32,12 +32,12 @@ public class UserDaoImp implements UserDao {
         return query.getResultList();
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
-    public List<Car> listCars() {
-        TypedQuery<Car> query = sessionFactory.getCurrentSession().createQuery("from Car ");
-        return query.getResultList();
-    }
+//    @Override
+//    @SuppressWarnings("unchecked")
+//    public List<Car> listCars() {
+//        TypedQuery<Car> query = sessionFactory.getCurrentSession().createQuery("from Car ");
+//        return query.getResultList();
+//    }
 
     @Override
     @SuppressWarnings("unchecked")

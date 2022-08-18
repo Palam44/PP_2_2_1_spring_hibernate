@@ -24,11 +24,11 @@ public class UserServiceImp implements UserService {
       userDao.add(user);
    }
 
-   @Transactional
-   @Override
-   public void add(Car car) {
-      userDao.add(car);
-   }
+//   @Transactional
+//   @Override
+//   public void add(Car car) {
+//      userDao.add(car);
+//   }
 
    @Transactional(readOnly = true)
    @Override
@@ -36,11 +36,11 @@ public class UserServiceImp implements UserService {
       return userDao.listUsers();
    }
 
-   @Transactional(readOnly = true)
-   @Override
-   public List<Car> listCars() {
-      return userDao.listCars();
-   }
+//   @Transactional(readOnly = true)
+//   @Override
+//   public List<Car> listCars() {
+//      return userDao.listCars();
+//   }
 
    @Transactional(readOnly = true)
    @Override
