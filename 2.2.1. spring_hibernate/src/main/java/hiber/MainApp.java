@@ -16,7 +16,7 @@ public class MainApp {
 
 
         UserService userService = context.getBean(UserService.class);
-        UserService carService = context.getBean(UserService.class);
+//        UserService carService = context.getBean(UserService.class);
 
 
         User user1 = new User("User1", "LastName1", "user1@mail.ru");
@@ -54,7 +54,7 @@ public class MainApp {
             System.out.println(user.toString());
         }
 
-        List<Car> cars = carService.listCars();
+        List<Car> cars = userService.listCars();
         for (Car car : cars) {
             System.out.println(car.toString());
         }
